@@ -125,8 +125,6 @@ const obj1: Person = {
   },
 }
 
-console.log(obj1);
-
 interface WorkingStudent {
   hasJob: boolean;
 }
@@ -144,7 +142,23 @@ class Student implements Person, WorkingStudent {
   sayHello(): void {}
 }
 
-console.log(new Student('Adrian', 20))
-
-
 class SeniorStudent extends Student {}
+
+
+// typy generyczne
+
+class Group<T> {
+  private items: Array<T> = []
+
+  public getItems(): Array<T> {
+    return this.items;
+  }
+
+  public addItem(arg: T): void {
+    this.items.push(arg);
+  }
+}
+
+const strings: Group<string> = new Group<string>();
+const numbers: Group<number> = new Group<number>();
+const students: Group<Student> = new Group<Student>();
