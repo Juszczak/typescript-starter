@@ -150,6 +150,10 @@ class SeniorStudent extends Student {}
 class Group<T> {
   private items: Array<T> = []
 
+  constructor(initialItems?: Array<T>) {
+    this.items = initialItems || [];
+  }
+
   public getItems(): Array<T> {
     return this.items;
   }
